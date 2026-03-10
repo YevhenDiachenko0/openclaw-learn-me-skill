@@ -149,4 +149,4 @@ Open-ended but specific. Not "tell me about yourself" — instead "what got you 
 
 ## Reference
 
-See `examples.md` in this skill directory for 100 example questions ordered light to deep. Use as inspiration — always personalize.
+See `examples.md` in this skill directory for 100 example questions ordered light to deep. Examples are in English — always ask in the user's preferred language. Use as inspiration, not scripts.
