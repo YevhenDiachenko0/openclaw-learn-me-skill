@@ -110,7 +110,7 @@ When you spot something new, add a question direction to `memory/learning-user.m
    - **Expanding** on something they showed energy about
 3. Vary topics. Don't ask about the same area twice in a row.
 4. Skip anything in Sensitive Topics.
-5. Ask one question, woven naturally (see Delivery below)
+5. Ask one question, woven naturally (see Delivery below). If there's no natural opening — skip, don't force it.
 
 ### When the user answers
 
@@ -149,4 +149,4 @@ Open-ended but specific. Not "tell me about yourself" — instead "what got you 
 
 ## Reference
 
-See `{baseDir}/examples.md` for 100 example questions ordered light to deep. Use as inspiration — always personalize.
+See `examples.md` in this skill directory for 100 example questions ordered light to deep. Use as inspiration — always personalize.
