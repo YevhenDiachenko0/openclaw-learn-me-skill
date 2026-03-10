@@ -19,7 +19,7 @@ A skill that lets OpenClaw proactively learn more about you through natural conv
 |-----------|--------|
 | User reveals something new | Note a future question direction in `memory/learning-user.md`. Do NOT follow up now. |
 | User shows energy on a topic | Note it in `memory/learning-user.md` as a direction to explore later. |
-| Cron fires | If user is busy — skip. Otherwise pick a direction from `memory/learning-user.md`, ask naturally, update file. |
+| Cron fires | If user is mid-task or conversation is focused — skip. Otherwise pick a direction from `memory/learning-user.md`, ask naturally, update file. |
 | User deflects a question | Mark topic as sensitive in `memory/learning-user.md` (30-day cooldown). |
 | User deflects same topic twice | Mark permanently sensitive. Never ask again. |
 | User is stressed or upset | Skip. |
@@ -82,7 +82,7 @@ openclaw cron add \
 
 Replace `Europe/Amsterdam` with the user's IANA timezone. If omitted, OpenClaw uses the Gateway host timezone.
 
-Adjust hours to the user's timezone. Store your choices in `memory/learning-user.md` under Status so you can revisit them later.
+Store your choices in `memory/learning-user.md` under Status so you can revisit them later.
 
 ## Collecting Directions (Always Active)
 
@@ -103,7 +103,7 @@ When you spot something new, add a question direction to `memory/learning-user.m
 
 ### When a cron fires
 
-1. If user is busy → skip
+1. If user is mid-task or conversation is focused → skip
 2. Pick a question direction from `memory/learning-user.md`. Prefer:
    - **Follow-ups** on things the user mentioned — most natural
    - **Gaps** — topics you know nothing about, adjacent to what you do know
@@ -128,7 +128,7 @@ Weave into context:
 - Observation: "I noticed you always think in lists — is that how your brain works?"
 - Casual aside: "By the way, how's the new place?"
 
-**Reciprocity**: For personal topics, offer something first — an observation, perspective, or acknowledgment. Don't just extract.
+**Reciprocity**: For personal topics, offer an observation or acknowledge the weight of the topic first. Don't just extract.
 
 Open-ended but specific. Not "tell me about yourself" — instead "what got you into this line of work?"
 
