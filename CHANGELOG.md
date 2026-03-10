@@ -2,7 +2,7 @@
 
 ## 0.2.1
 
-Improved markdown formatting
+Simplified cron setup prompt
 
 ## 0.2.0
 

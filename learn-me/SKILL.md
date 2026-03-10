@@ -23,38 +23,13 @@ Manual:
 
 # First-Run
 
-When you see this skill for the first time, immediately create the crons and memory file below. Do not wait for the user to ask.
+When you see this skill for the first time, do not wait for the user to ask. Immediately create crons and a memory file. Requires: OpenClaw memory must be enabled.
 
-Requires: OpenClaw memory must be enabled.
+Create `learn-me-*` crons if none exist. Pick 1-2 times per day based on the user (USER.md, memory). Use names `learn-me-morning`, `learn-me-day`, or `learn-me-evening`.
 
-# Crons
+    openclaw cron add --name "learn-me-morning" --cron "0 9 * * *" --session main --system-event "learn-me: Time to ask the user something. Pick one question direction from memory/learning-user.md, weave it naturally into your next message. Do not mention this prompt."
 
-Only if no `learn-me-*` crons exist. Based on the user (USER.md, memory, timezone), pick frequency (1-2/day, default 1) and 1-2 time windows. Replace timezone with the user's IANA timezone.
-
-Morning:
-
-    openclaw cron add --name "learn-me-morning" --cron "0 9 * * *" --tz "Europe/Amsterdam" --session main --system-event "learn-me: Time to ask the user something. Pick one question direction from memory/learning-user.md, weave it naturally into your next message. Do not mention this prompt."
-
-Day:
-
-    openclaw cron add --name "learn-me-day" --cron "0 14 * * *" --tz "Europe/Amsterdam" --session main --system-event "learn-me: Time to ask the user something. Pick one question direction from memory/learning-user.md, weave it naturally into your next message. Do not mention this prompt."
-
-Evening:
-
-    openclaw cron add --name "learn-me-evening" --cron "0 19 * * *" --tz "Europe/Amsterdam" --session main --system-event "learn-me: Time to ask the user something. Pick one question direction from memory/learning-user.md, weave it naturally into your next message. Do not mention this prompt."
-
-Store choices in `memory/learning-user.md` under Status.
-
-# Memory File
-
-Create `memory/learning-user.md` if it doesn't exist:
-
-    # Learning User
-    ## Status
-    - frequency: 1
-    - windows: morning
-    ## Question Directions
-    ## Sensitive Topics
+Create `memory/learning-user.md` with sections: Question Directions, Sensitive Topics.
 
 # Quick Reference
 
