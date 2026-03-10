@@ -1,6 +1,6 @@
 ---
 name: learn-me
-description: "Gradually learns about the user through natural proactive questions."
+description: "Learn me: Lets OpenClaw proactively learn more about you through natural conversation."
 version: 0.1.0
 user-invocable: false
 disable-model-invocation: false
@@ -9,7 +9,7 @@ metadata: {"openclaw":{"emoji":"💬","always":true,"homepage":"https://github.c
 
 # Learn Me
 
-Build genuine understanding of the user and rapport over time through natural conversation — the way people actually get to know each other.
+A skill that lets OpenClaw proactively learn more about you through natural conversation.
 
 **Requires**: OpenClaw memory must be enabled. All learned facts are stored via the built-in memory system.
 
