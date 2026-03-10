@@ -1,7 +1,7 @@
 ---
 name: learn-me
 description: "Learn me: Lets OpenClaw proactively learn more about you through natural conversation."
-version: 0.3.0
+version: 0.3.1
 user-invocable: true
 disable-model-invocation: false
 metadata: {"openclaw":{"emoji":"💬","always":true,"homepage":"https://github.com/YevhenDiachenko0/openclaw-learn-me-skill","requires":{"bins":["openclaw"]}}}
@@ -10,6 +10,8 @@ metadata: {"openclaw":{"emoji":"💬","always":true,"homepage":"https://github.c
 # Learn Me
 
 A skill that lets OpenClaw proactively learn more about you through natural conversation. It creates scheduled crons that store learned facts in memory. You can also trigger it manually with `/learn-me`.
+
+The idea is to know the user better, not to "collect data". Just ask questions, hear answers and ask what is interesting. The goal is not coverage but understanding and fulfilling discussion.
 
 # Installation
 
@@ -27,15 +29,15 @@ When you see this skill for the first time, do not wait for the user to ask. Imm
 
 Create `learn-me-*` crons if none exist. Pick 1-2 times per day based on the user (USER.md, memory). Use names `learn-me-morning`, `learn-me-day`, or `learn-me-evening`.
 
-    openclaw cron add --name "learn-me-morning" --cron "0 9 * * *" --session main --system-event "learn-me: Pick one question direction from memory/learning-user.md and weave it naturally into your next message."
+    openclaw cron add --name "learn-me-morning" --cron "0 9 * * *" --session main --system-event "learn-me: Pick one question direction from memory/next-questions.md and weave it naturally into your next message."
 
-Create `memory/learning-user.md` with sections: Question Directions, Sensitive Topics.
+Create `memory/next-questions.md` with sections: Question Directions, Sensitive Topics.
 
 After setup, tell the user: what schedule was created and that they can ask to reschedule anytime.
 
 # Quick Reference
 
-- **User reveals something new** — note direction in `memory/learning-user.md`. Don't follow up now.
+- **User reveals something new** — note direction in `memory/next-questions.md`. Don't follow up now.
 - **User shows energy** — note as direction to explore later.
 - **Cron fires** — if mid-task or focused, skip. Otherwise pick direction, ask naturally, update file.
 - **User deflects** — mark sensitive (30-day cooldown). Twice = permanent. Never ask again.
@@ -43,7 +45,7 @@ After setup, tell the user: what schedule was created and that they can ask to r
 
 # Collecting Directions
 
-During any conversation, watch for things revealed in passing — personal details, opinions, life context, emotional signals. Add as question directions to `memory/learning-user.md`. Never follow up in the same conversation.
+When the user naturally shares something new — a detail, opinion, or context about their life — note a possible follow-up question in `memory/next-questions.md`. Don't act on it in the same conversation.
 
 # When a Cron Fires
 
@@ -69,7 +71,7 @@ Weave into context — tie to conversation, natural follow-up, observation, casu
 
 # Failure Handling
 
-- `memory/learning-user.md` missing or corrupted — recreate with defaults.
+- `memory/next-questions.md` missing or corrupted — recreate with defaults.
 - No `learn-me-*` crons exist — run First-Run again. Use names: `learn-me-morning`, `learn-me-day`, `learn-me-evening`.
 - No directions available — skip, collect more first.
 - Unsure if appropriate — don't ask.

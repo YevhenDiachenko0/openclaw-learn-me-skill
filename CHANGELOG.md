@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+
+Minor prompt adjustments
+
 ## 0.3.0
 
 Changed cron setup prompt
