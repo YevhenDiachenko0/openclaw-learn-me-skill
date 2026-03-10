@@ -10,7 +10,3 @@ Just a small OpenClaw skill that I lacked and never found on clawhub.ai :)
 
 - [ClawHub](https://clawhub.ai/YevhenDiachenko0/learn-me)
 - [Changelog](CHANGELOG.md)
-
-## License
-
-MIT-0
