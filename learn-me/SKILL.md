@@ -4,7 +4,7 @@ description: "Learn me: Lets OpenClaw proactively learn more about you through n
 version: 0.2.0
 user-invocable: false
 disable-model-invocation: false
-metadata: {"openclaw":{"emoji":"💬","always":true,"homepage":"https://github.com/YevhenDiachenko0/learn-me","requires":{"bins":["openclaw"]}}}
+metadata: {"openclaw":{"emoji":"💬","always":true,"homepage":"https://github.com/YevhenDiachenko0/openclaw-learn-me-skill","requires":{"bins":["openclaw"]}}}
 ---
 
 # Learn Me
@@ -20,7 +20,7 @@ clawhub install learn-me
 
 **Manual:**
 ```bash
-git clone https://github.com/YevhenDiachenko0/learn-me.git ~/.openclaw/skills/learn-me
+git clone https://github.com/YevhenDiachenko0/openclaw-learn-me-skill.git ~/.openclaw/skills/learn-me
 ```
 
 ## 1. First-Run — Execute Once After Install
