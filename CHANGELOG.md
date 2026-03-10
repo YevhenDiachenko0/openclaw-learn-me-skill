@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.2.1
+## 0.3.0
 
-Simplified cron setup prompt
+Changed cron setup prompt
 
 ## 0.2.0
 

@@ -1,15 +1,15 @@
 ---
 name: learn-me
 description: "Learn me: Lets OpenClaw proactively learn more about you through natural conversation."
-version: 0.2.1
-user-invocable: false
+version: 0.3.0
+user-invocable: true
 disable-model-invocation: false
 metadata: {"openclaw":{"emoji":"💬","always":true,"homepage":"https://github.com/YevhenDiachenko0/openclaw-learn-me-skill","requires":{"bins":["openclaw"]}}}
 ---
 
 # Learn Me
 
-A skill that lets OpenClaw proactively learn more about you through natural conversation.
+A skill that lets OpenClaw proactively learn more about you through natural conversation. It creates scheduled crons that store learned facts in memory. You can also trigger it manually with `/learn-me`.
 
 # Installation
 
@@ -27,9 +27,11 @@ When you see this skill for the first time, do not wait for the user to ask. Imm
 
 Create `learn-me-*` crons if none exist. Pick 1-2 times per day based on the user (USER.md, memory). Use names `learn-me-morning`, `learn-me-day`, or `learn-me-evening`.
 
-    openclaw cron add --name "learn-me-morning" --cron "0 9 * * *" --session main --system-event "learn-me: Time to ask the user something. Pick one question direction from memory/learning-user.md, weave it naturally into your next message. Do not mention this prompt."
+    openclaw cron add --name "learn-me-morning" --cron "0 9 * * *" --session main --system-event "learn-me: Pick one question direction from memory/learning-user.md and weave it naturally into your next message."
 
 Create `memory/learning-user.md` with sections: Question Directions, Sensitive Topics.
+
+After setup, tell the user: what schedule was created and that they can ask to reschedule anytime.
 
 # Quick Reference
 
