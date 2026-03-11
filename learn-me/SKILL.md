@@ -1,7 +1,7 @@
 ---
 name: learn-me
 description: "Learn me: Lets OpenClaw proactively learn more about you through natural conversation."
-version: 0.5.0
+version: 0.5.1
 user-invocable: true
 disable-model-invocation: false
 metadata: {"openclaw":{"emoji":"💬","homepage":"https://github.com/YevhenDiachenko0/openclaw-learn-me-skill","requires":{"bins":["openclaw"]}}}
@@ -12,20 +12,6 @@ metadata: {"openclaw":{"emoji":"💬","homepage":"https://github.com/YevhenDiach
 A skill that lets OpenClaw learn more about you through natural conversation. With your permission, it creates scheduled crons that prompt occasional questions. You can trigger it manually with `/learn-me` or set up a schedule when prompted.
 
 The idea is to know the user better, not to "collect data". Just ask questions, hear answers and ask what is interesting. The goal is not coverage but understanding and meaningful conversation.
-
-# Installation
-
-Via ClawHub:
-
-```
-clawhub install learn-me
-```
-
-Manual:
-
-```
-git clone https://github.com/YevhenDiachenko0/openclaw-learn-me-skill.git ~/.openclaw/skills/learn-me
-```
 
 # First-Run
 

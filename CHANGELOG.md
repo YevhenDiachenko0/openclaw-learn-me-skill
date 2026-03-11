@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1
+
+Removed installation guide from SKILL.md (install instructions belong in README, not in the machine-readable skill file). Updated install command to `npx clawhub@latest install learn-me`.
+
 ## 0.5.0
 
 Removed "always:true" from the skill metadata since it was not necessary.
