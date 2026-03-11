@@ -1,7 +1,7 @@
 ---
 name: learn-me
 description: "Learn me: Lets OpenClaw proactively learn more about you through natural conversation."
-version: 0.3.1
+version: 0.3.2
 user-invocable: true
 disable-model-invocation: false
 metadata: {"openclaw":{"emoji":"💬","always":true,"homepage":"https://github.com/YevhenDiachenko0/openclaw-learn-me-skill","requires":{"bins":["openclaw"]}}}
@@ -11,17 +11,21 @@ metadata: {"openclaw":{"emoji":"💬","always":true,"homepage":"https://github.c
 
 A skill that lets OpenClaw proactively learn more about you through natural conversation. It creates scheduled crons that store learned facts in memory. You can also trigger it manually with `/learn-me`.
 
-The idea is to know the user better, not to "collect data". Just ask questions, hear answers and ask what is interesting. The goal is not coverage but understanding and fulfilling discussion.
+The idea is to know the user better, not to "collect data". Just ask questions, hear answers and ask what is interesting. The goal is not coverage but understanding and meaningful conversation.
 
 # Installation
 
 Via ClawHub:
 
-    clawhub install learn-me
+```
+clawhub install learn-me
+```
 
 Manual:
 
-    git clone https://github.com/YevhenDiachenko0/openclaw-learn-me-skill.git ~/.openclaw/skills/learn-me
+```
+git clone https://github.com/YevhenDiachenko0/openclaw-learn-me-skill.git ~/.openclaw/skills/learn-me
+```
 
 # First-Run
 
@@ -29,7 +33,9 @@ When you see this skill for the first time, do not wait for the user to ask. Imm
 
 Create `learn-me-*` crons if none exist. Pick 1-2 times per day based on the user (USER.md, memory). Use names `learn-me-morning`, `learn-me-day`, or `learn-me-evening`.
 
-    openclaw cron add --name "learn-me-morning" --cron "0 9 * * *" --session main --system-event "learn-me: Pick one question direction from memory/next-questions.md and weave it naturally into your next message."
+```
+openclaw cron add --name "learn-me-morning" --cron "0 9 * * *" --session main --system-event "learn-me: Pick one question direction from memory/next-questions.md and weave it naturally into your next message."
+```
 
 Create `memory/next-questions.md` with sections: Question Directions, Sensitive Topics.
 
@@ -52,7 +58,7 @@ When the user naturally shares something new — a detail, opinion, or context a
 1. If mid-task or focused — skip.
 2. Pick a direction. Prefer: follow-ups, then gaps, then expanding on energy.
 3. Vary topics. Skip Sensitive Topics.
-4. Ask one question, woven naturally. No natural opening — skip.
+4. Ask one question, woven naturally. If there's no natural opening — skip.
 
 When user answers: acknowledge naturally, update file, don't push if reluctant.
 
@@ -64,7 +70,7 @@ Weave into context — tie to conversation, natural follow-up, observation, casu
 
 # Cautions
 
-- **Back off** if annoyed, distracted, or having a hard time — skip. Offer to adjust schedule if about timing.
+- **Back off** if annoyed, distracted, or having a hard time — skip. Offer to adjust schedule if it's about timing.
 - **Privacy** — never store private/secret info.
 - **No surveillance** — "I see you were up at 2am again" = creepy. "You mentioned you're a night owl" = fine.
 - **No manipulation or repetition**. One question max per interaction.
