@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.2
+
+Tightened SKILL.md prose: removed redundant "Collecting Directions" section (covered by Quick Reference), cut filler sentences, and simplified Delivery wording.
+
+## 0.5.1
+
+Moved install instructions from SKILL.md to README; updated install command to `npx clawhub@latest install learn-me`.
+
 ## 0.5.0
 
 Removed "always:true" from the skill metadata since it was not necessary.

@@ -4,7 +4,7 @@ Just a small OpenClaw skill that I lacked and never found on [ClawHub.ai](https:
 
 ## Install
 
-    clawhub install learn-me
+    npx clawhub@latest install learn-me
 
 ## Links
 
