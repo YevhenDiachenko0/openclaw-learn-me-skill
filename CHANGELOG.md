@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0
+
+Added 25 diverse questions and shuffled all questions to break inherent order
+
 ## 0.3.2
 
 Fixed unclear phrasings and simplified markdown
