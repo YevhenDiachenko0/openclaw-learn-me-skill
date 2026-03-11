@@ -1,15 +1,15 @@
 ---
 name: learn-me
 description: "Learn me: Lets OpenClaw proactively learn more about you through natural conversation."
-version: 0.3.2
+version: 0.5.0
 user-invocable: true
 disable-model-invocation: false
-metadata: {"openclaw":{"emoji":"💬","always":true,"homepage":"https://github.com/YevhenDiachenko0/openclaw-learn-me-skill","requires":{"bins":["openclaw"]}}}
+metadata: {"openclaw":{"emoji":"💬","homepage":"https://github.com/YevhenDiachenko0/openclaw-learn-me-skill","requires":{"bins":["openclaw"]}}}
 ---
 
 # Learn Me
 
-A skill that lets OpenClaw proactively learn more about you through natural conversation. It creates scheduled crons that store learned facts in memory. You can also trigger it manually with `/learn-me`.
+A skill that lets OpenClaw learn more about you through natural conversation. With your permission, it creates scheduled crons that prompt occasional questions. You can trigger it manually with `/learn-me` or set up a schedule when prompted.
 
 The idea is to know the user better, not to "collect data". Just ask questions, hear answers and ask what is interesting. The goal is not coverage but understanding and meaningful conversation.
 
@@ -29,9 +29,11 @@ git clone https://github.com/YevhenDiachenko0/openclaw-learn-me-skill.git ~/.ope
 
 # First-Run
 
-When you see this skill for the first time, do not wait for the user to ask. Immediately create crons and a memory file. Requires: OpenClaw memory must be enabled.
+When you see this skill for the first time, introduce it to the user: explain that from time to time you'll weave in a question to get to know them better, and that you can set up a daily schedule to do this automatically.
 
-Create `learn-me-*` crons if none exist. Pick 1-2 times per day based on the user (USER.md, memory). Use names `learn-me-morning`, `learn-me-day`, or `learn-me-evening`.
+Ask the user if they'd like to set up a schedule. Suggest 1-2 times per day (morning, evening) and let them pick. Only create crons after they confirm.
+
+Once confirmed, create the crons:
 
 ```
 openclaw cron add --name "learn-me-morning" --cron "0 9 * * *" --session main --system-event "learn-me: Pick one question direction from memory/next-questions.md and weave it naturally into your next message."
@@ -39,7 +41,7 @@ openclaw cron add --name "learn-me-morning" --cron "0 9 * * *" --session main --
 
 Create `memory/next-questions.md` with sections: Question Directions, Sensitive Topics.
 
-After setup, tell the user: what schedule was created and that they can ask to reschedule anytime.
+Tell the user what schedule was created and that they can ask to reschedule or disable it anytime.
 
 # Quick Reference
 
@@ -64,9 +66,9 @@ When user answers: acknowledge naturally, update file, don't push if reluctant.
 
 # Delivery
 
-Never announce questions. No "I was curious...", "Can I ask you something?"
+Weave questions into context — tie to conversation, natural follow-up, observation, casual aside. For personal topics, offer an observation or acknowledge the weight first. Open-ended but specific.
 
-Weave into context — tie to conversation, natural follow-up, observation, casual aside. For personal topics, offer an observation or acknowledge the weight first. Open-ended but specific.
+Avoid robotic openers like "Question 3 of 10:". Natural is fine: "I was curious..." or "Can I ask..." work when they fit.
 
 # Cautions
 

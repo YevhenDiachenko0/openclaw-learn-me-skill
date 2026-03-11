@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0
+
+Removed "always:true" from the skill metadata since it was not necessary.
+
 ## 0.4.0
 
 Added 25 diverse questions and shuffled all questions to break inherent order
