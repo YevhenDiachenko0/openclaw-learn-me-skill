@@ -1,6 +1,6 @@
 # Learn Me
 
-Just a small OpenClaw skill that I lacked and never found on clawhub.ai :)
+Just a small OpenClaw skill that I lacked and never found on [ClawHub.ai](https://clawhub.ai/) :)
 
 ## Install
 
