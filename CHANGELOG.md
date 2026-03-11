@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2
+
+Fixed unclear phrasings and simplified markdown
+
 ## 0.3.1
 
 Minor prompt adjustments
